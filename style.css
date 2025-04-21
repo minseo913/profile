@@ -1,0 +1,88 @@
+/* 폰트 적용 (글자 크기 수정 시 폰트 적용이 안 될 수 있음)*/
+
+/* 제목, 소제목*/
+h1, h2 {
+  font-family: 'Jua', sans-serif; 
+}
+
+/* 본문 */
+ul, ol{
+  font-family: 'Pretendard Variable', sans-serif; 
+  font-weight: 600;
+  color:rgb(58, 54, 55) /*글자 색 변경*/
+}
+
+/* 글자 색 변경*/
+
+/* 제목 */
+h1{
+  color:rgb(217, 66, 106)
+
+}
+
+/* 소제목 */
+h2{
+  color: rgb(242, 93, 133);
+}
+
+/* 목차 테두리 설정 + 테두리 안 글자 크기 & 색 */
+nav{
+  border: none;
+  border-radius: 30px;
+  border-color: indianred;
+  width: 300px;
+  background-color: rgb(246, 226, 230);
+}
+
+nav h2{
+  font-size: 30px;
+  color: rgb(238, 68, 114);
+}
+
+nav ul{
+  font-size: 20px;
+}
+
+/* 선 굵기, 색 */
+hr{
+  background-color: indianred;
+  height: 3px;
+}
+  
+footer
+{
+  font-size: 12px;
+  font-family: 'Pretendard Variable', sans-serif;
+  color:rgb(58, 54, 55);
+  position: fixed;      /* 고정 */
+  bottom: 0;            /* 화면 아래 위치 */
+  text-align: right;    /* 오른쪽 정렬 */
+  width: 100%;  
+}
+
+/* 프로젝트 설명하는 글 크기 */
+p
+{
+  font-size: 12px;
+}
+
+/*프로젝트 링크 글씨 크기 등 수정*/
+li div
+{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: indianred;
+  width: 300px;
+  background-color: rgb(246, 226, 230);
+}
+
+/* 프로젝트 제목 */
+.project-title {
+  background-color: rgb(246, 226, 230);  
+  padding: 10px 15px;
+  border: none;                    
+  border-radius: 10px;                  
+  width: fit-content;                   
+  margin-bottom: 10px;              
+}
+

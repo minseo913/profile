@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>포트폴리오</title>
+  <!-- 메타데이터 -> 페이지 제작자, 간단한 설명 등 -->
+  <meta name="author" content="김민서">
+  <meta name="description" content="김민서의 개인 포트폴리오 페이지">
+  <meta name="keywords" content="포트폴리오, 웹, 프로젝트, 김민서">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <!-- 폰트 설정 -->
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" rel="stylesheet" /> 
+</head>
+<body>
+  <header>
+    <h1>📑 PORTFOLIO</h1>
+  </header>
+  <hr>
+  <br>
+  <main>
+     <!-- 목차 -->
+    <nav>
+      <h2>📂 Contents</h2>
+      <ul> <!-- 목차 (앵커)-->
+        <li><a href="#profile">👩‍💻 Profile</a></li>
+        <li><a href="#Contact & Links">📬 Contact & Links</a></li>
+        <li><a href="#My projects">💻 My Projects</a></li>
+        <li><a href="#Web Form">📝 Web Form</a></li> 
+      </ul>
+    </nav>
+    <br>
+    <hr>
+    <!-- 프로필 -->
+    <section id="profile" class="main">
+      <h2>👩‍💻 Profile</h2>
+      <img src="media/프로필 이미지.jpg" width="170" height="170" alt="프로필 이미지">
+      <ul> <!-- 부머리말 <strong>을 사용하여 강조 -->
+        <li><strong>Name:</strong> 김민서</li> 
+        <li><strong>Education:</strong> 덕성여자대학교 디지털소프트웨어공학부 재학</li>
+        <li><strong>Skills</strong></li>
+          <ul>
+            <li>HTML / CSS / JavaScript</li>
+            <li>Python</li>
+            <li>C</li>
+            <li>Git & GitHub</li>
+          </ul>
+      </ul>
+    </section>
+    <br>
+    <!-- 연결 정보 -->
+    <section id="Contact & Links">
+      <h2>📬 Contact & Links</h2>
+      <ul>
+        <li>Email: mminng13@duksung.ac.kr</li>
+        <li>GitHub: <a href="https://github.com/minseo913" target="_blank">https://github.com/minseo913</a></li>
+      </ul>
+    </section>
+    <br>
+    <!-- 프로젝트 -->
+  <section id="My projects">
+    <h2>💻 My Projects</h2>
+    <ol type="A"> <!-- 프로젝트 번호 부여 (리스트 태그) -->
+      <li>
+        <!-- 프로젝트 제목만 배경 설정 -->
+        <div class="project-title">
+          🍽️ MUST-VISIT RESTAURANT in Daegu
+        </div>
+
+        <!-- 프로젝트 설명 -->
+        <p>
+          직접 가서 먹어본 대구의 맛집 5군데를 엄선하여 정리한 맛집 리스트.<br>
+          각 식당 별로 이미지, 상호, 평점, 위치 등을 등록해두어 보기 쉽게 정리해둔 
+          <span style="color: rgb(247, 97, 97);">'맛집 리스트' 프로젝트</span>.
+        </p>
+
+        <!-- 구현된 웹페이지에 대한 접속 링크 -->
+        <ul>
+          <li style="font-size: 13px;">
+            Web Page: 
+            <a href="https://minseo913.github.io/mustvisitrestaurant/" target="_blank">
+              https://minseo913.github.io/mustvisitrestaurant/
+            </a>
+          </li>
+          <!-- 깃허브 저장소 링크 -->
+          <li style="font-size: 13px;">
+            GitHub Repository: 
+            <a href="https://github.com/minseo913/mustvisitrestaurant" target="_blank">
+              https://github.com/minseo913/mustvisitrestaurant
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ol>      
+  </section>
+  </main>
+<br>
+<section id="Web Form">
+  <h2>📝 Web Form</h2>
+  <ul>
+    <li><a href="https://minseo913.github.io/profile/form.html" target="_blank">https://minseo913.github.io/profile/form.html</a></li>
+  </ul>
+</section>
+<br>
+<hr>
+  <footer> <!-- 우측 하단 꼬리말 -->
+    <p>Created by 김민서    Email: mminng13@duksung.ac.kr    <김민서개인 포트폴리오 페이지></p>
+  </footer>
+</body>
+</html>
