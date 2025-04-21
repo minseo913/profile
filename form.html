@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>웹 폼</title>
+  <style>                                                  
+    form {
+      width: 500px;
+      margin: 50px auto;                              /* 가로방향 중앙정렬*/
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #878585;
+      border-radius: 5px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[list],
+    select,
+    textarea {
+      width: 95%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #b0acac;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #6b6c6b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    button:hover {
+      background-color: #717271;
+    }
+  </style>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const city = document.getElementById("city").value;
+      const study = document.getElementById("form1_study_id")?.value || "";
+  
+      let gender = "";
+      if (document.getElementById("gender_id1").checked) {
+        gender = document.getElementById("gender_id1").value;
+      } else if (document.getElementById("gender_id2").checked) {
+        gender = document.getElementById("gender_id2").value;
+      }
+  
+      const affiliation = [];
+      if (document.getElementById("affiliation_id1").checked) affiliation.push("문과");
+      if (document.getElementById("affiliation_id2").checked) affiliation.push("이과");
+      if (document.getElementById("affiliation_id3").checked) affiliation.push("예체능");
+      const affiliation_final = affiliation.join(',');
+  
+      const food = document.getElementById("food_id").value;
+      const message = document.getElementById("message_id").value;
+  
+      fetch("https://script.google.com/macros/s/AKfycbyIT1kV0ztypgmWk78S9nQqPzIb5gCIr-fi3dwtkWU_-5tSF_w1J1JshneWhgejeq-T/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: 
+          `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}&study=${encodeURIComponent(study)}&gender=${encodeURIComponent(gender)}&affiliation=${encodeURIComponent(affiliation_final)}&food=${encodeURIComponent(food)}&message=${encodeURIComponent(message)}`
+      });
+  
+      
+      alert("정보가 성공적으로 전송되었습니다!");
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="submitForm(event)">
+    <!-- 회원 정보 (fieldest 1) -->
+    <fieldset>
+      <legend>회원 정보</legend>
+
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+
+      <!-- 이메일 형식 검사가 있는 한 줄 테스트 -->
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+      <!-- 데이터 목록 -->
+      <label for="city">사는 도시:</label>
+      <input list="cities" id="city" name="city" placeholder="예: 서울">
+      <datalist id="cities">
+        <option value="서울">
+        <option value="부산">
+        <option value="대구">
+        <option value="인천">
+        <option value="광주">
+      </datalist>
+    </fieldset>
+
+    <!-- 추가 정보 (fieldest 2) -->
+    <fieldset>
+      <legend>추가 정보</legend>
+
+      <!-- 라디오버튼 -->
+      <p>성별:</p>
+      <label><input type="radio" name="gender" id="gender_id1" value="male"> 남자</label>
+      <label><input type="radio" name="gender" id="gender_id2" value="female"> 여자</label>
+
+      <!-- 체크박스 -->
+      <p>계열:</p>
+      <label><input type="checkbox" name="affiliation_1" id="affiliation_id1" value="1"> 문과</label>
+      <label><input type="checkbox" name="affiliation_2" id="affiliation_id2" value="2"> 이과</label>
+      <label><input type="checkbox" name="affiliation_3" id="affiliation_id3" value="3"> 예체능</label>
+      <br>
+
+      <!-- 콤보 박스 -->
+      <label for="food">좋아하는 음식 종류:</label>
+      <select name="food" id="food_id">
+        <option value="">-- 선택하세요 --</option>
+        <option value="1">한식</option>
+        <option value="2">중식</option>
+        <option value="3">일식</option>
+        <option value="4">양식</option>
+      </select>
+      <br><br>
+
+      <!-- 여러줄 텍스트 입력 -->
+      <label for="message">자기소개:</label>
+      <textarea id="message_id" name="message" rows="4" placeholder="간단한 자기소개를 작성해주세요" required></textarea>
+    </fieldset>
+
+    <div class="button-container">
+    <button type="submit">제출</button>
+    </div>
+   </form>
+</body>
+</html>
